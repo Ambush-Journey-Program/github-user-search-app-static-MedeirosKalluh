@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+}
+body {
+    display:flex;
+    justify-content: center;
+    font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
+    
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    width: 730px;
+    height: 555px;
+    margin: 100px;
+}
+.header {
+    display: flex;
+    width: 730px;
+    height: 38px;
+    font-style: normal;
+    font-weight: 700;
+    background-color: #FFFFFF;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 14px;
+
+}
+.header__title {
+    font-size: 26px;
+    line-height: 39px;
+    color: #222731;
+}
+
+.header__title:hover {
+    cursor: pointer;
+}
+
+.header__button {
+    display:flex;
+    color: #697C9A;
+    background-color: #FFFFFF;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    width: 85px;
+    font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
+    font-weight: 700;
+    
+}
+
+.header__icon {
+display: block;
+}
+
+.header__icon--hover {
+display: none;
+}
+
+.header__button:hover {
+    color: #222731;
+    cursor: pointer; 
+    fill: #222731;
+}
+.header__button:hover .header__icon {
+    display: none;
+}
+
+.header__button:hover .header__icon--hover {
+    display: block;
+}
+
+.search {
+    
+}
+
+.card {
+
+}
