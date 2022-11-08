@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/reset.css">
     <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <title>Github User Search</title>
 </head>
+
 <body>
-    <div class="container">    
-        <div class='header'> 
-            <h2 class='header__title'>devfinder</h2>   
-            <button class='header__button'>DARK<img class='header__icon'src="images/moon.svg" alt="Dark Mode Moon icon"></button>                
+    <div class="container">
+        <div class='header'>
+            <h2 class='header__title'>devfinder</h2>
+            <button class='header__button'>dark
+                <img class='header__icon' src="images/moon.svg" alt="Dark Mode Moon icon"/>
+                <img class='header__icon header__icon--hover' src="images/moonhover.svg" alt="Dark Mode Moon icon"/>
+            </button>
         </div>
-     
+
         <div class='search'>
             <img class='search__icon' src="images/lupa.svg" alt="magnifying glass icon">
             <input placeholder="Search GitHub username…">
-            <button class='search__button' >Search</button>
+            <button class='search__button'>Search</button>
         </div>
-     
+
         <div class='card'>
             <div class='card__topside'>
                 <img class='card__image--profile' src="images/Oval.png" alt="Your profile picture">
                 <h1 class='card__title'>The Octocat</h1>
-                <a class='card__link'href="https://twitter.com/simonoxleee/status/1094978302689857537">@octocat</a>
+                <a class='card__link' href="https://twitter.com/simonoxleee/status/1094978302689857537">@octocat</a>
                 <p class='card__date'>Joined 25 Jan 2011</p>
             </div>
 
             <div class='card__bio'>
-                <p class='card__text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+                <p class='card__text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                    volutpat mattis eros.</p>
             </div>
 
             <div class='card__info'>
@@ -43,12 +53,15 @@
 
             <div class='card__finder'>
                 <ul class='card__finder--list'>
-                    <li>San Francisco<img class='card__image--logo'src="images/loc.svg" alt="GPS Location Icon"></li>
-                    <li> https://github.blog <img class='card__image--logo'src="images/004-twitter.svg" alt="Twitter Bird Icon"></li>
-                    <li>Not Available<img class='card__image--logo'src="images/002-url.svg" alt="Chain Link Icon"></li>
-                    <li>@github<img class='card__image--logo'src="images/001-office-building.svg" alt="Office building Icon"></li>
-                </ul>   
+                    <li>San Francisco<img class='card__image--logo' src="images/loc.svg" alt="GPS Location Icon"></li>
+                    <li> https://github.blog <img class='card__image--logo' src="images/004-twitter.svg"
+                            alt="Twitter Bird Icon"></li>
+                    <li>Not Available<img class='card__image--logo' src="images/002-url.svg" alt="Chain Link Icon"></li>
+                    <li>@github<img class='card__image--logo' src="images/001-office-building.svg"
+                            alt="Office building Icon"></li>
+                </ul>
             </div>
         </div>
-    </body>
+</body>
+
 </html>
