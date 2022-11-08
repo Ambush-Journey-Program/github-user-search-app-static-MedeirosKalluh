@@ -8,8 +8,6 @@ body {
     
 }
 .container {
-    display:flex;
-    flex-direction: column;
     width: 730px;
     height: 555px;
     margin: 100px;
