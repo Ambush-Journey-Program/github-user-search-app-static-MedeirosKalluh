@@ -116,5 +116,83 @@ body {
     background: #60ABFF;
 }
 .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     background-color: #FFFFFF;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    border-radius: 15px;
+    padding: 48px;
+}
+.card__topside {
+
+   
+}
+.card__image--profile {
+    grid-column: 1;
+}
+.card__title {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color: #2B3442;
+    grid-column: 2;
+    grid-row: 1;
+}
+.card__link {
+
+}
+.card__date {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: right;
+    color: #697C9A;
+    grid-column: 3;
+    grid-row: 1;
+}
+.card__bio {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 167%; 
+    color: #4B6A9B;
+    grid-column: 2 / -1;
+    grid-row: 2;
+}
+.card__info {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    color: #4B6A9B;
+    grid-column: 2 ;
+    grid-row: 3;
+    display: flex;
+
+}
+h2 {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: #2B3442;
+}
+.card__finder {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #4B6A9B;
+    grid-column: 2 / -1;
+    grid-row: 4;   
 }
