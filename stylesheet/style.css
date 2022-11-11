@@ -85,7 +85,7 @@ body {
     font-size: 18px;
 }
 
-.search__icon{
+.search__icon {
     margin-right: 24px;
     height: 24px;
     cursor: pointer;
@@ -119,10 +119,10 @@ body {
 .card {
     display: grid;
     grid-template-areas:
-    "card__image--profile    card__title   card__date"
-    " .                      card__bio     card__bio"
-    " .                      card__info    card__info"
-    " .                      card__finder  card__finder";
+    "card__profile  card__header  card__date"
+    " .             card__bio     card__bio"
+    " .             card__info    card__info"
+    " .             card__finder  card__finder";
     grid-gap: 30px;
     padding: 48px;
     background-color: #FFFFFF;
@@ -130,15 +130,18 @@ body {
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 }
 
-.card__image--profile {
-    grid-area: card__image--profile;
+.card__profile {
+    grid-area: card__profile;
 }
 
-.card__title {
-    grid-area: card__title;
+.card__header{
+    grid-area: card__header;
+}
+h1 {
     font-weight: 700;
     font-size: 26px;
     color: #2B3442;
+    line-height: 39px;
 }
 
 .card__link {
@@ -149,6 +152,7 @@ body {
 
 .card__date {
     grid-area: card__date;
+    margin-top: 4px;
     font-weight: 400;
     font-size: 15px;
     text-align: right;
@@ -173,10 +177,12 @@ body {
     border-radius: 10px;
     background-color: #F6F8FF;
     color: #4B6A9B;
+    justify-content: left;
 }
 
-.card__info-activities {
+.card__activities {
     margin: 0 30px ;
+    
 }
 
 h2 {
@@ -188,29 +194,14 @@ h2 {
 }
 
 .card__finder {
-    display: grid;
     grid-area: card__finder; 
-    grid-template-areas:
-    "card__finder--1  card__finder--2"
-    "card__finder--3  card__finder--4";
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     font-weight: 400;
     font-size: 15px;
     color: #4B6A9B;
 }
 
-.card__finder--1 {
-    grid-area: card__finder--1;
-}
-
-.card__finder--2 {
-    grid-area: card__finder--2;
-}
-
-.card__finder--3 {
-    grid-area: card__finder--3;
-}
-
-.card__finder--4 {
-    grid-area: card__finder--4;
+.card__social {
+    width: 50%; 
 }
