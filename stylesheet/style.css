@@ -4,6 +4,7 @@ html {
 
 body {
     font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
+    font-weight: 400;
     background: #F6F8FF;  
 }
 
@@ -16,7 +17,6 @@ body {
     display: flex;
     justify-content: space-between;    
     width: 100%;
-    font-style: normal;
     font-weight: 700;
     margin-bottom: 14px;
 }
@@ -69,7 +69,6 @@ body {
 
 .search {
     display: flex;
-    font-weight: 400;
     margin-bottom: 14px;
     padding: 10px;
     padding-left: 32px;
@@ -103,7 +102,6 @@ body {
     align-self: center;
     height: 50px;
     padding: 0 24px;
-    font-weight: 400;
     font-size: 16px;
     color: #FFFFFF;
     background: #0079FF;
@@ -137,7 +135,8 @@ body {
 .card__header{
     grid-area: card__header;
 }
-h1 {
+
+.profile__name {
     font-weight: 700;
     font-size: 26px;
     color: #2B3442;
@@ -145,7 +144,6 @@ h1 {
 }
 
 .card__link {
-    font-weight: 400;
     font-size: 16px;
     color: #0079FF;
 }
@@ -153,7 +151,6 @@ h1 {
 .card__date {
     grid-area: card__date;
     margin-top: 4px;
-    font-weight: 400;
     font-size: 15px;
     text-align: right;
     color: #697C9A;
@@ -161,7 +158,6 @@ h1 {
 
 .card__bio {
     grid-area: card__bio;
-    font-weight: 400;
     font-size: 15px;
     text-align: justify;
     color: #4B6A9B;
@@ -172,20 +168,17 @@ h1 {
     justify-content: center;
     grid-area: card__info;
     padding: 15px;
-    font-weight: 400;
     font-size: 13px;
     border-radius: 10px;
     background-color: #F6F8FF;
     color: #4B6A9B;
-    justify-content: left;
 }
 
 .card__activities {
-    margin: 0 30px ;
-    
+    margin: 0 30px;   
 }
 
-h2 {
+.info__numbers {
     font-weight: 700;
     font-size: 22px;
     line-height: 33px;
@@ -197,7 +190,6 @@ h2 {
     grid-area: card__finder; 
     display: flex;
     flex-wrap: wrap;
-    font-weight: 400;
     font-size: 15px;
     color: #4B6A9B;
 }
