@@ -225,13 +225,15 @@ body {
 .profile__name {
     font-weight: 700;
     font-size: 26px;
+    line-height: 41px;
     color: #2B3442;
-    line-height: 39px;
 }
 
 .card__link {
     font-size: 16px;
     color: #0079FF;
+    text-decoration: underline transparent;
+    line-height: 24px;
 }
 
 .card__date {
@@ -245,13 +247,15 @@ body {
 .card__bio {
     grid-area: card__bio;
     font-size: 15px;
+    line-height: 25px;
     text-align: justify;
     color: #4B6A9B;
 }
 
 .card__info {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     grid-area: card__info;
     padding: 15px;
     font-size: 13px;
@@ -261,7 +265,8 @@ body {
 }
 
 .card__activities {
-    margin: 0 30px;   
+
+    text-align: left;
 }
 
 .info__numbers {
@@ -276,10 +281,20 @@ body {
     grid-area: card__finder; 
     display: flex;
     flex-wrap: wrap;
-    font-size: 15px;
     color: #4B6A9B;
 }
 
 .card__social {
     width: 50%; 
+    padding: 10px;
+}
+
+.card__adress:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.card__twitter{
+    cursor: not-allowed;
+    opacity: 0.4;
 }
