@@ -210,4 +210,6 @@ body {
 .card__social {
     width: 50%; 
     padding: 10px;
+    display: flex;
+    gap: 20px;
 }
