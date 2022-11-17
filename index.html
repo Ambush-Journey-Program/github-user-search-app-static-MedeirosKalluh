@@ -23,47 +23,57 @@
                 <img class='header__icon header__icon--hover' src="images/moonhover.svg" alt="Dark Mode Moon icon"/>
             </button>
         </div>
-
         <div class='search'>
             <div class='search__placeholder'>
-              <img class='search__icon' src="images/lupa.svg" alt="magnifying glass icon">
-              <input class=search__bar placeholder="Search GitHub username…">
+            <img   class='search__icon' src="images/lupa.svg" alt="magnifying glass icon">
+            <input class=search__bar    placeholder="Search GitHub username…">
             </div>
             <button class='search__button'>Search</button>
         </div>
-
         <div class='card'>
-            <div class='card__topside'>
-                <img class='card__image--profile' src="images/Oval.png" alt="Your profile picture">
-                <h1 class='card__title'>The Octocat</h1>
+            <img class='card__profile' src="images/Oval.png" alt="Your profile picture">
+            <div class='card__header'>
+                <h1 class="profile__name">The Octocat</h1>
                 <a class='card__link' href="https://twitter.com/simonoxleee/status/1094978302689857537">@octocat</a>
-                <p class='card__date'>Joined 25 Jan 2011</p>
             </div>
+            <p class='card__date'>Joined 25 Jan 2011</p>
 
             <div class='card__bio'>
-                <p class='card__text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-                    volutpat mattis eros.</p>
+                <p class='card__text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
             </div>
-
             <div class='card__info'>
-                <ul class='card__info--activities'>
-                    <li>repos 8</li>
-                    <li>folowers 3938</li>
-                    <li>following 9</li>
-                </ul>
+                <div class='card__activities'>
+                    <p class='card__text'>Repos</p>
+                    <h2 class="info__numbers">8</h2>
+                </div>
+                <div class='card__activities'>
+                    <p class='card__text'>Followers</p>
+                    <h2 class="info__numbers">3938</h2>
+                </div>
+                <div class='card__activities'>
+                    <p class='card__text'>Following</p>
+                    <h2 class="info__numbers">9</h2>
+                </div>
             </div>
-
             <div class='card__finder'>
-                <ul class='card__finder--list'>
-                    <li>San Francisco<img class='card__image--logo' src="images/loc.svg" alt="GPS Location Icon"></li>
-                    <li> https://github.blog <img class='card__image--logo' src="images/004-twitter.svg"
-                            alt="Twitter Bird Icon"></li>
-                    <li>Not Available<img class='card__image--logo' src="images/002-url.svg" alt="Chain Link Icon"></li>
-                    <li>@github<img class='card__image--logo' src="images/001-office-building.svg"
-                            alt="Office building Icon"></li>
-                </ul>
+                <div class='card__social'>
+                    <img class='card__logo' src="images/loc.svg" alt="GPS Location Icon"> 
+                    <p class='card__text'> San Francisco</p>
+                </div>
+                <div class='card__social card__text--not-enabled'>
+                    <img class='card__logo' src="images/004-twitter.svg" alt="Twitter Bird Icon">
+                    <p class='card__text'> Not Available</p>
+                </div>
+                <div class=' card__social card__adress'>
+                    <img class='card__logo' src="images/002-url.svg"alt="Chain Link Icon">
+                    <a  class='card__text card__link'href="https://github.blog"> https://github.blog</a>
+                </div>
+                <div class='card__social'>
+                    <img class='card__logo' src="images/001-office-building.svg" alt="Office building Icon">
+                    <p class='card__text'>@github</p>
+                </div>
             </div>
         </div>
+    </div>
 </body>
-
 </html>

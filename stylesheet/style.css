@@ -1,9 +1,6 @@
-html {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
+    font-weight: 400;
     background: #F6F8FF;  
 }
 
@@ -14,10 +11,9 @@ body {
 
 .header {
     display: flex;
+    justify-content: space-between;    
     width: 100%;
-    font-style: normal;
     font-weight: 700;
-    justify-content: space-between;
     margin-bottom: 14px;
 }
 
@@ -33,17 +29,17 @@ body {
 
 .header__button {
     display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85px;
+    height: 50px;
+    font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
     color: #697C9A;
     background-color: #F6F8FF;
     border: none;
-    align-items: center;
-    justify-content: space-between;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    width: 85px;
-    font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
-    font-weight: 700;
-    height: 50px;
 }
 
 .header__icon {
@@ -69,52 +65,151 @@ body {
 
 .search {
     display: flex;
-    font-weight: 400;
-    background-color: #FFFFFF;
     margin-bottom: 14px;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-    border-radius: 15px;
     padding: 10px;
     padding-left: 32px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    border-radius: 15px;
 }
 
 .search__placeholder {
     display: flex;
-    align-items: center ;
+    align-items: center;
     width: 100%;
     font-size: 18px;
 }
 
-.search__icon{
-    height: 24px;
+.search__icon {
     margin-right: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
 .search__bar {
     flex: 1;
-    background-color: #FFFFFF;
-    border: none;
     font-family: 'Space Mono';
     line-height: 45px;
+    background-color: #FFFFFF;
+    border: none;
 }
 
 .search__button { 
+    align-self: center;
+    height: 50px;
+    padding: 0 24px;
+    font-size: 16px;
+    color: #FFFFFF;
     background: #0079FF;
     border: none;
     border-radius: 10px;
-    height: 50px;
-    padding: 0 24px;
-    font-weight: 400;
     cursor: pointer;
-    font-size: 16px;
-    color: #FFFFFF;
-    align-self: center;  
 }
 
 .search__button:hover {
     background: #60ABFF;
 }
+
 .card {
+    display: grid;
+    grid-template-areas:
+    "card__profile  card__header  card__date"
+    "card__profile  card__bio     card__bio"
+    " .             card__info    card__info"
+    " .             card__finder  card__finder";
+    grid-gap: 30px;
+    padding: 48px;
     background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.card__profile {
+    grid-area: card__profile;
+    align-self: center;
+}
+
+.card__header{
+    grid-area: card__header;
+}
+
+.profile__name {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 41px;
+    color: #2B3442;
+}
+
+.card__link {
+    font-size: 16px;
+    color: #0079FF;
+    text-decoration: underline transparent;
+    line-height: 24px;
+}
+
+.card__link:hover {
+    text-decoration: underline;
+}
+
+.card__date {
+    grid-area: card__date;
+    margin-top: 4px;
+    font-size: 15px;
+    text-align: right;
+    color: #697C9A;
+}
+
+.card__text {
+    text-align: justify;
+    color: #4B6A9B;
+}
+
+.card__text--not-enabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.card__bio {
+    grid-area: card__bio;
+    font-size: 15px;
+    line-height: 25px;
+
+}
+
+.card__info {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    grid-area: card__info;
+    padding: 15px;
+    font-size: 13px;
+    border-radius: 10px;
+    background-color: #F6F8FF;
+    color: #4B6A9B;
+}
+
+.card__activities {
+    text-align: left;
+}
+
+.info__numbers {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: #2B3442;
+}
+
+.card__finder {
+    grid-area: card__finder; 
+    display: flex;
+    flex-wrap: wrap;
+    color: #4B6A9B;
+}
+
+.card__social {
+    width: 50%; 
+    padding: 10px;
+    display: flex;
+    gap: 20px;
 }
