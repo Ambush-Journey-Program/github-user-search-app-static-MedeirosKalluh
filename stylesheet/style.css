@@ -147,6 +147,10 @@ body {
     line-height: 24px;
 }
 
+.card__link:hover {
+    text-decoration: underline;
+}
+
 .card__date {
     grid-area: card__date;
     margin-top: 4px;
@@ -155,12 +159,21 @@ body {
     color: #697C9A;
 }
 
+.card__text {
+    text-align: justify;
+    color: #4B6A9B;
+}
+
+.card__text--not-enabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 .card__bio {
     grid-area: card__bio;
     font-size: 15px;
     line-height: 25px;
-    text-align: justify;
-    color: #4B6A9B;
+
 }
 
 .card__info {
@@ -176,7 +189,6 @@ body {
 }
 
 .card__activities {
-
     text-align: left;
 }
 
@@ -198,14 +210,4 @@ body {
 .card__social {
     width: 50%; 
     padding: 10px;
-}
-
-.card__adress:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.card__twitter{
-    cursor: not-allowed;
-    opacity: 0.4;
 }
