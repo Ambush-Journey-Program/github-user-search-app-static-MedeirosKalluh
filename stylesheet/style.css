@@ -225,7 +225,6 @@ body {
     grid-area: card__bio;
     font-size: 15px;
     line-height: 25px;
-    text-align: justify;
     color: #4B6A9B;
 }
 
