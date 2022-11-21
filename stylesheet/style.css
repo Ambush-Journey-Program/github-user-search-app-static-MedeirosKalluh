@@ -135,7 +135,7 @@ body {
 }
 
 .search__icon {
-    margin: var(--search-icon-margin);
+    margin: 22px;
     height: 24px;
     cursor: pointer;
 }
