@@ -55,7 +55,8 @@ body {
 }
 
 .container {
-    width: var(--container-width);
+    max-width: var(--container-width);
+    width: 100%;
     margin:  var(--container-margin);
     padding: var(--cotainner-padding);
 }
@@ -190,12 +191,12 @@ body {
     justify-content: space-between;
 }
 
-.profile__header {
+.card__header {
     display: flex;
     flex-direction: column;
 }
 
-.profile__name {
+.card__name {
     font-weight: 700;
     font-size: 26px;
     line-height: 41px;
@@ -229,7 +230,6 @@ body {
 }
 
 .card__text {
-    text-align: justify;
     color: #4B6A9B;
 }
 
@@ -255,7 +255,7 @@ body {
     text-align: var(--card-activities-position);
 }
 
-.info__numbers {
+.card__numbers {
     font-weight: 700;
     font-size: 22px;
     line-height: 33px;
