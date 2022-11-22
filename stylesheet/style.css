@@ -136,7 +136,8 @@ body {
 }
 
 .search__icon {
-    margin: 22px;
+    margin-right: 22px;
+    margin-left: 22px;
     height: 24px;
     cursor: pointer;
 }
@@ -256,6 +257,7 @@ body {
 }
 
 .card__numbers {
+    margin-top: 15px;
     font-weight: 700;
     font-size: 22px;
     line-height: 33px;
