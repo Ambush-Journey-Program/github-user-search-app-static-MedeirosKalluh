@@ -1,7 +1,7 @@
 body {
     font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
     font-weight: 400;
-    background: var(--body-background);  
+    background: var(--background);  
     color: var(--text-color);
     transition: .4s;
 }
@@ -24,7 +24,7 @@ body {
     --social-width: 50%;   
     --card-finder-direction: row;  
     /* dark mode variables */
-    --body-background: #F6F8FF;
+    --background: #F6F8FF;
     --card-background: #FFFFFF;
     --text-color: #4B6A9B;
     --title-color: #2B3442;
@@ -65,9 +65,8 @@ body {
 }
 
 /* Dark Mode */
-
 .dark-mode {
-    --body-background: #141D2F;
+    --background: #141D2F;
     --card-background: #1E2A47;
     --info-background: #141D2F;
     --text-color: #FFFFFF;
@@ -75,8 +74,6 @@ body {
     --date-color:  #FFFFFF;
     --border-shadow: 0;
 }
-
-/* _____ */
 
 .container {
     max-width: var(--container-width);
@@ -118,8 +115,14 @@ body {
     background-color: var(--background);
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background-color .4s;
+}
+
+.header__icon {
+    display: block;
+}
+
+.header__icon--hover {
+    display: none;
 }
 
 .header__button:hover {
