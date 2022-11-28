@@ -115,20 +115,12 @@ body {
     background-color: var(--background);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .4s;
 }
-
-.header__icon {
-    display: block;
-}
-
-.header__icon--hover {
-    display: none;
-}
-
 .header__button:hover {
     color: #2B3442;
 }
-
 .dark-mode .header__button:hover {
     color: #90A4D4;
 }
@@ -147,7 +139,7 @@ body {
 }
 
 .dark-mode .header__button::before {
-    content: "Light";
+    content:"Light";
 }
 
 .dark-mode .header__button::after {
