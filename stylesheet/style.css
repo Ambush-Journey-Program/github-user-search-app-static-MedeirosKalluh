@@ -106,7 +106,7 @@ body {
     display:flex;
     align-items: center;
     justify-content: space-between;
-    width: 85px;
+    min-width: 90px;
     height: 50px;
     font-weight: 700;
     text-transform: uppercase;
@@ -115,27 +115,39 @@ body {
     background-color: var(--background);
     border: none;
     border-radius: 10px;
-}
-
-.header__icon {
-    display: block;
-}
-
-.header__icon--hover {
-    display: none;
-}
-
-.header__button:hover {
-    color: #222731;
     cursor: pointer;
+    transition: background-color .4s;
+}
+.header__button:hover {
+    color: #2B3442;
+}
+.dark-mode .header__button:hover {
+    color: #90A4D4;
 }
 
-.header__button:hover .header__icon {
-    display: none;
+.header__button::before {
+    content:"Dark";
 }
 
-.header__button:hover .header__icon--hover {
-    display: block;
+.header__button::after {
+    content:url(../images/moon.svg);
+    margin-left: 10px;
+}
+
+.header__button:hover::after {
+    content:url(../images/moonhover.svg);
+}
+
+.dark-mode .header__button::before {
+    content:"Light";
+}
+
+.dark-mode .header__button::after {
+    content:url(../images/002-sun.svg);
+}
+
+.dark-mode .header__button:hover::after {
+    content:url(../images/001-sun.svg);
 }
 
 /* -- SEARCHBAR  -- */
