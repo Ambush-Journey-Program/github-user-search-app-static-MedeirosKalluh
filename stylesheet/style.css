@@ -139,7 +139,7 @@ body {
 }
 
 .dark-mode .header__button::before {
-    content:"Light";
+    content: "Light";
 }
 
 .dark-mode .header__button::after {
