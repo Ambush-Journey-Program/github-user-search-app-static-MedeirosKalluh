@@ -12,7 +12,7 @@ body {
     --cotainner-padding: 0;
     --search-icon-margin: 22px;
     --card-grid-template:    
-        "card__profile  card__header  card__header"
+        "card__profile  card__header card__header"
         "card__profile  card__bio     card__bio"
         " .             card__info    card__info"
         " .             card__finder  card__finder";
@@ -24,7 +24,7 @@ body {
     --social-width: 50%;   
     --card-finder-direction: row;  
     /* dark mode variables */
-    --background: #F6F8FF;
+    --body-background: #F6F8FF;
     --card-background: #FFFFFF;
     --text-color: #4B6A9B;
     --title-color: #2B3442;
@@ -46,7 +46,7 @@ body {
             "card__finder   card__finder card__finder";
         --card-header-direction: column;
         --card-date-side: left;
-        --social-width: 50%;    
+        --social-width: 50%;   
     }
 }
 
@@ -65,8 +65,9 @@ body {
 }
 
 /* Dark Mode */
+
 .dark-mode {
-    --background: #141D2F;
+    --body-background: #141D2F;
     --card-background: #1E2A47;
     --info-background: #141D2F;
     --text-color: #FFFFFF;
@@ -74,6 +75,8 @@ body {
     --date-color:  #FFFFFF;
     --border-shadow: 0;
 }
+
+/* _____ */
 
 .container {
     max-width: var(--container-width);
@@ -181,6 +184,10 @@ body {
     width: 100%;
     background-color: var(--card-background);
     border: none;
+    color: var(--title-color);
+}
+.search__bar::placeholder {
+    color: var(--date-color);
 }
 
 .search__button { 
@@ -223,11 +230,6 @@ body {
     display: flex;
     flex-direction: var(--card-header-direction);
     justify-content: space-between;
-}
-
-.card__header {
-    display: flex;
-    flex-direction: column;
 }
 
 .card__name {

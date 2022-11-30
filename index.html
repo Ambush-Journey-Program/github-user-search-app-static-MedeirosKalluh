@@ -15,7 +15,12 @@
 </head>
 
 <body>
-    <script src="app.js"></script>
+    <script>
+        function changeMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");}
+    </script>
+
     <div class="container">
         <div class='header'>
             <h2 class='header__title'>devfinder</h2>
@@ -31,7 +36,7 @@
         <div class='card'>
             <img class='card__profile' src="images/Oval.png" alt="Your profile picture">
             <div class='card__header'>
-                <div class="card__header">
+                <div class="card__title">
                     <h1 class="card__name">The Octocat</h1>
                     <a class='card__link' href="https://twitter.com/simonoxleee/status/1094978302689857537">@octocat</a>
                 </div>
