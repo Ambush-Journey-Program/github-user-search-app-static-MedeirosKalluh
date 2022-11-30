@@ -15,13 +15,16 @@
 </head>
 
 <body>
+    <script>
+        function changeMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");}
+    </script>
+
     <div class="container">
         <div class='header'>
             <h2 class='header__title'>devfinder</h2>
-            <button class='header__button'>dark
-                <img class='header__icon' src="images/moon.svg" alt="Dark Mode Moon icon"/>
-                <img class='header__icon header__icon--hover' src="images/moonhover.svg" alt="Dark Mode Moon icon"/>
-            </button>
+            <button class='header__button' onclick='changeMode()'></button>
         </div>
         <div class='search'>
             <div class='search__placeholder'>
@@ -33,7 +36,7 @@
         <div class='card'>
             <img class='card__profile' src="images/Oval.png" alt="Your profile picture">
             <div class='card__header'>
-                <div class="card__header">
+                <div class="card__title">
                     <h1 class="card__name">The Octocat</h1>
                     <a class='card__link' href="https://twitter.com/simonoxleee/status/1094978302689857537">@octocat</a>
                 </div>
@@ -68,7 +71,7 @@
                 </div>
                 <div class=' card__social card__adress'>
                     <img class='card__logo' src="images/002-url.svg"alt="Chain Link Icon">
-                    <a  class='card__text card__link'href="https://github.blog"> https://github.blog</a>
+                    <a  class='card__link card__text' href="https://github.blog"> https://github.blog</a>
                 </div>
                 <div class='card__social'>
                     <img class='card__logo' src="images/001-office-building.svg" alt="Office building Icon">
