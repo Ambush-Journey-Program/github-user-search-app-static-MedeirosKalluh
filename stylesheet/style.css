@@ -24,7 +24,7 @@ body {
     --social-width: 50%;   
     --card-finder-direction: row;  
     /* dark mode variables */
-    --background: #F6F8FF;
+    --body-background: #F6F8FF;
     --card-background: #FFFFFF;
     --text-color: #4B6A9B;
     --title-color: #2B3442;
@@ -65,8 +65,9 @@ body {
 }
 
 /* Dark Mode */
+
 .dark-mode {
-    --background: #141D2F;
+    --body-background: #141D2F;
     --card-background: #1E2A47;
     --info-background: #141D2F;
     --text-color: #FFFFFF;
@@ -74,6 +75,8 @@ body {
     --date-color:  #FFFFFF;
     --border-shadow: 0;
 }
+
+/* _____ */
 
 .container {
     max-width: var(--container-width);
@@ -183,7 +186,6 @@ body {
     border: none;
     color: var(--title-color);
 }
-
 .search__bar::placeholder {
     color: var(--date-color);
 }
