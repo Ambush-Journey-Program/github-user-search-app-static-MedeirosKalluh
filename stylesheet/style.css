@@ -121,9 +121,11 @@ body {
     cursor: pointer;
     transition: background-color .4s;
 }
+
 .header__button:hover {
     color: #2B3442;
 }
+
 .dark-mode .header__button:hover {
     color: #90A4D4;
 }
@@ -186,6 +188,7 @@ body {
     border: none;
     color: var(--title-color);
 }
+
 .search__bar::placeholder {
     color: var(--date-color);
 }
