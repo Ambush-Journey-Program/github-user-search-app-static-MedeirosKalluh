@@ -21,15 +21,14 @@
             <h2 class='header__title'>devfinder</h2>
             <button class='header__button' onclick='changeMode()'></button>
         </div>
-        <div class='search'>
+        <form class='search'>
             <div class='search__placeholder'>
             <img   class='search__icon' src="images/lupa.svg" alt="magnifying glass icon">
-            <input class=search__bar    placeholder="Search GitHub username…">
+            <input class=search__bar type="text" placeholder="Search GitHub username…" required>
             </div>
             <button class='search__button'>Search</button>
-        </div>
+        </form>
         <div class='card__initial' >
-            <img class='card__profile' id="card-profile" src="images/Oval.png" alt="Your profile picture">
             <h1>Lookup GitHub profiles and repositories!</h1>
         </div>
         <div class='card'>

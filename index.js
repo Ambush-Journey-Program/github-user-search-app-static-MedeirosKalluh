@@ -8,8 +8,9 @@ function changeMode() {
 
 const cardEl = document.querySelector(".card")
 const initialState = document.querySelector(".card__initial")
-const octocatProfile = document.getElementById ("card-profile")
-octocatProfile.addEventListener("click", function(event){
+const searchEl = document.querySelector(".search")
+searchEl.addEventListener('submit', function(event){
+    event.preventDefault();
     cardEl.style.display = "grid";
-    initialState.style.display = "none";
+    initialState.style.display = "none";  
 })

@@ -226,18 +226,13 @@ body {
     background-color: var(--card-background);
     border-radius: 15px;
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 3.5rem;
     box-shadow: var(--border-shadow);
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--title-color);
     text-align: center;
     align-items: center;
-}
-
-.card__initial .card__profile {
-    margin: 1rem;
-    cursor: pointer;
 }
 
 .card__profile {
