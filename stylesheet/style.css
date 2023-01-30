@@ -212,13 +212,27 @@ body {
 /* -- CARD -- */
 
 .card {
-    display: grid;
+    display: none;
     grid-template-areas: var(--card-grid-template);
     grid-gap: 30px;
     background-color: var(--card-background);
     border-radius: 15px;
     padding: var(--card-padding);
     box-shadow: var(--border-shadow);
+}
+
+.card__initial {
+    display: flex;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 3.5rem;
+    box-shadow: var(--border-shadow);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-align: center;
+    align-items: center;
 }
 
 .card__profile {
