@@ -11,17 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
     <title>Github User Search</title>
 </head>
 
 <body>
-    <script>
-        function changeMode() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");}
-    </script>
-
-       <div class="container">
+    <div class="container">
         <div class='header'>
             <h2 class='header__title'>devfinder</h2>
             <button class='header__button' onclick='changeMode()'></button>
@@ -32,6 +27,10 @@
             <input class=search__bar    placeholder="Search GitHub username…">
             </div>
             <button class='search__button'>Search</button>
+        </div>
+        <div class='card__initial' >
+            <img class='card__profile' id="card-profile" src="images/Oval.png" alt="Your profile picture">
+            <h1>Lookup GitHub profiles and repositories!</h1>
         </div>
         <div class='card'>
             <img class='card__profile' src="images/Oval.png" alt="Your profile picture">
