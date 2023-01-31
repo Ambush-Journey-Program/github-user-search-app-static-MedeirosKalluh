@@ -12,15 +12,17 @@ async function fetchResponse(url) {
     const info = await response.json();
     return info
 } 
-
 const cardEl = document.querySelector(".card")
 const initialState = document.querySelector(".card__initial")
 const searchEl = document.querySelector(".search")
+const loading = document.querySelector(".loading")
 searchEl.addEventListener('submit', async function(event){
     event.preventDefault();
-    cardEl.style.display = "grid";
-    initialState.style.display = "none";
     const apiSource = `${apiGit}/users/${searchInput.value}`
+    initialState.style.display = "none";
+    loading.style.display = "flex";
     const infoApi = await fetchResponse(apiSource)
+    loading.style.display = "none";  
+    cardEl.style.display = "grid";
     console.log(infoApi)
 })

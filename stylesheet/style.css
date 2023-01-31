@@ -221,6 +221,21 @@ body {
     box-shadow: var(--border-shadow);
 }
 
+.loading {
+    display: none;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 3.5rem;
+    box-shadow: var(--border-shadow);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
 .card__initial {
     display: flex;
     background-color: var(--card-background);
