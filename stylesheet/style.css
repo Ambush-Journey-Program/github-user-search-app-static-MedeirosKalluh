@@ -255,6 +255,7 @@ body {
     max-width: 100%;
     min-width: 70px;
     align-self: center;
+    border-radius: 100%;
 }
 
 .card__header {
