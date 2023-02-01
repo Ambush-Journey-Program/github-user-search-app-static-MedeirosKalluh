@@ -299,6 +299,7 @@ body {
 
 .card__text {
     color: var(--text-color);
+    overflow: hidden;
 }
 
 .card__text--not-enabled {

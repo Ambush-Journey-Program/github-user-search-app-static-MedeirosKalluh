@@ -53,27 +53,42 @@ const userTwitter = document.getElementById("user-twitter")
 const userBlog = document.getElementById("user-blog")
 const userCompany = document.getElementById("user-company")
 
-function writeHtmlCardInfo(infoApi){
-
-    userAvatar.src = infoApi.avatar_url ? infoApi.avatar_url : 'images/Oval.png';
-    userName.textContent = testValidation(infoApi.name)
-    githubProfileLink.textContent =   testValidation(infoApi.login)
-    githubProfileLink.href =  testValidation(infoApi.html_url)
-    githubJoinDate.textContent =  testValidation(infoApi.created_at)
-    userBio.textContent =  testValidation(infoApi.bio)
-    userRepos.textContent =  testValidation(infoApi.public_repos)
-    userFollowers.textContent =  testValidation(infoApi.followers)
-    userFollowing.textContent = testValidation(infoApi.following)
-   
-    userLocation.textContent = testValidation(infoApi.location)
-    userTwitter.textContent = testValidation(infoApi.twitter_username)
-    
-    userBlog.href = testValidation(infoApi.blog)
-    userBlog.textContent = testValidation(infoApi.blog)
-    
-    userCompany.textContent = testValidation(infoApi.company)
+function setContentOrFallback (apiValue, value = "Empty"){
+    return apiValue ? apiValue : value;    
 }
 
-function testValidation (apiValue){
-    return apiValue ? apiValue : 'Empty';    
+function setDisable(element, value){
+    if(!value){
+        element.closest(".card__social").classList.add("card__text--not-enabled")
+    }
+}
+
+function setFormatDate(value){
+  return  new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'short', year: 'numeric'} ).format(value)
+}
+
+const today = new Date()
+
+function writeHtmlCardInfo(infoApi){
+    userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png'); 
+    userName.textContent = setContentOrFallback(infoApi.name)
+    githubProfileLink.textContent =   setContentOrFallback(infoApi.login)
+    githubProfileLink.href =  setContentOrFallback(infoApi.html_url)
+    // arrumar date
+    const rigthFormat = setFormatDate(infoApi.created_at)
+    githubJoinDate.textContent =  setContentOrFallback(`Joined ${rigthFormat}`)
+    
+    userBio.textContent =  setContentOrFallback(infoApi.bio, "BIO EMPTY")
+    userRepos.textContent =  setContentOrFallback(infoApi.public_repos, "0")
+    userFollowers.textContent =  setContentOrFallback(infoApi.followers, "0")
+    userFollowing.textContent = setContentOrFallback(infoApi.following, "0")   
+    userLocation.textContent = setContentOrFallback(infoApi.location)
+    setDisable(userLocation, infoApi.location)    
+    userTwitter.textContent = setContentOrFallback(infoApi.twitter_username)
+    setDisable(userTwitter, infoApi.twitter_username)
+    userBlog.href = setContentOrFallback(infoApi.blog)
+    userBlog.textContent = setContentOrFallback(infoApi.blog)   
+    setDisable(userBlog, infoApi.blog)
+    userCompany.textContent = setContentOrFallback(infoApi.company)
+    setDisable(userCompany, infoApi.company)
 }
