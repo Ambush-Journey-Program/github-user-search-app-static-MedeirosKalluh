@@ -63,8 +63,6 @@ function setDisable(element, value){
     }
 }
 
-const dateTimeUTC = new Date("2011-01-25T18:44:36Z")
-
 function writeHtmlCardInfo(infoApi){
     userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png'); 
     userName.textContent = setContentOrFallback(infoApi.name)

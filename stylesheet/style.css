@@ -303,6 +303,7 @@ body {
 }
 
 .card__text--not-enabled {
+    pointer-events: none;
     cursor: not-allowed;
     opacity: 0.4;
 }
