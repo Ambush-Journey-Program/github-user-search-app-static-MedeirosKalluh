@@ -221,6 +221,21 @@ body {
     box-shadow: var(--border-shadow);
 }
 
+.loading {
+    display: none;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 3.5rem;
+    box-shadow: var(--border-shadow);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
 .card__initial {
     display: flex;
     background-color: var(--card-background);
@@ -240,6 +255,7 @@ body {
     max-width: 100%;
     min-width: 70px;
     align-self: center;
+    border-radius: 100%;
 }
 
 .card__header {
