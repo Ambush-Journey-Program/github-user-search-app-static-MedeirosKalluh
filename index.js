@@ -63,21 +63,15 @@ function setDisable(element, value){
     }
 }
 
-function setFormatDate(value){
-  return  new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'short', year: 'numeric'} ).format(value)
-}
-
-const today = new Date()
+const dateTimeUTC = new Date("2011-01-25T18:44:36Z")
 
 function writeHtmlCardInfo(infoApi){
     userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png'); 
     userName.textContent = setContentOrFallback(infoApi.name)
     githubProfileLink.textContent =   setContentOrFallback(infoApi.login)
     githubProfileLink.href =  setContentOrFallback(infoApi.html_url)
-    // arrumar date
-    const rigthFormat = setFormatDate(infoApi.created_at)
-    githubJoinDate.textContent =  setContentOrFallback(`Joined ${rigthFormat}`)
-    
+    const apiDate = new Date(infoApi.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'})
+    githubJoinDate.textContent =  setContentOrFallback(`Joined ${apiDate}`)    
     userBio.textContent =  setContentOrFallback(infoApi.bio, "BIO EMPTY")
     userRepos.textContent =  setContentOrFallback(infoApi.public_repos, "0")
     userFollowers.textContent =  setContentOrFallback(infoApi.followers, "0")
