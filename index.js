@@ -18,7 +18,6 @@ searchEl.addEventListener('submit', async function(event){
     setLoadingScreen();
     const infoApi = await getUser(searchInput.value)
     writeHtmlCardInfo(infoApi)
-    console.log(infoApi)
     setCardScreen()
 })
 
