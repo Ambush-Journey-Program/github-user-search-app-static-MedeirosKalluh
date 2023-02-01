@@ -299,9 +299,11 @@ body {
 
 .card__text {
     color: var(--text-color);
+    overflow: hidden;
 }
 
 .card__text--not-enabled {
+    pointer-events: none;
     cursor: not-allowed;
     opacity: 0.4;
 }
