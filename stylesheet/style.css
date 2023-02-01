@@ -221,7 +221,8 @@ body {
     box-shadow: var(--border-shadow);
 }
 
-.loading {
+.loading,
+.not-found-screen {
     display: none;
     background-color: var(--card-background);
     border-radius: 15px;
@@ -233,7 +234,7 @@ body {
     color: var(--title-color);
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .card__initial {
@@ -252,8 +253,8 @@ body {
 
 .card__profile {
     grid-area: card__profile;
-    max-width: 100%;
-    min-width: 70px;
+    max-width: 6.25rem;
+    min-width: 4rem;
     align-self: center;
     border-radius: 100%;
 }
