@@ -36,6 +36,7 @@ async function getUser(username) {
 function setLoadingScreen() {
     initialState.style.display = "none";
     cardEl.style.display = "none"
+    notFoundScreenEl.style.display = "none"
     loadingEl.style.display = "flex";
 }
 
