@@ -1,3 +1,5 @@
+const errorPgNtFound = 404
+
 //Dark mode
 function changeMode() {
     const element = document.body;
@@ -19,17 +21,22 @@ searchEl.addEventListener('submit', async function(event){
     setLoadingScreen();
     const infoApi = await getUser(searchInput.value)
     writeHtmlCardInfo(infoApi)
-    setResult(infoApi.message)
+    setResult(infoApi.status)
 })
 
 function setResult (apiResult){
-    return !apiResult ? setCardScreen() : setUserNotFound();    
+    if(apiResult === errorPgNtFound){
+        return setUserNotFound();
+    } else {
+        return  setCardScreen();
+    }        
 }
 
 async function getUser(username) {
     const response = await fetch(`${API_GIT}/users/${username}`);
+    const apiStatus = response.status
     const info = await response.json();
-    return info
+    return {...info, status:apiStatus}
 }
 
 
