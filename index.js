@@ -29,7 +29,7 @@ function setResult (statusCode){
         return setUserNotFound();
     } else {
         return  setCardScreen();
-    }        
+    }
 }
 
 async function getUser(username) {
@@ -73,7 +73,7 @@ const userBlog = document.getElementById("user-blog")
 const userCompany = document.getElementById("user-company")
 
 function setContentOrFallback (apiValue, value = "Empty"){
-    return apiValue ? apiValue : value;    
+    return apiValue ? apiValue : value;
 }
 
 function setDisable(element, value){
@@ -81,26 +81,26 @@ function setDisable(element, value){
         element.closest(".card__social").classList.add("card__text--not-enabled")
     } else if (value){
         element.closest(".card__social").classList.remove("card__text--not-enabled")
-    } 
+    }
 }
 
 function writeHtmlCardInfo(infoApi){
-    userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png'); 
+    userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png');
     userName.textContent = setContentOrFallback(infoApi.name)
     githubProfileLink.textContent =   setContentOrFallback(infoApi.login)
     githubProfileLink.href =  setContentOrFallback(infoApi.html_url)
     const apiDate = new Date(infoApi.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'})
-    githubJoinDate.textContent =  setContentOrFallback(`Joined ${apiDate}`)    
+    githubJoinDate.textContent =  setContentOrFallback(`Joined ${apiDate}`)
     userBio.textContent =  setContentOrFallback(infoApi.bio, "BIO EMPTY")
     userRepos.textContent =  setContentOrFallback(infoApi.public_repos, "0")
     userFollowers.textContent =  setContentOrFallback(infoApi.followers, "0")
-    userFollowing.textContent = setContentOrFallback(infoApi.following, "0")   
+    userFollowing.textContent = setContentOrFallback(infoApi.following, "0")
     userLocation.textContent = setContentOrFallback(infoApi.location)
-    setDisable(userLocation, infoApi.location)    
+    setDisable(userLocation, infoApi.location)
     userTwitter.textContent = setContentOrFallback(infoApi.twitter_username)
     setDisable(userTwitter, infoApi.twitter_username)
     userBlog.href = setContentOrFallback(infoApi.blog)
-    userBlog.textContent = setContentOrFallback(infoApi.blog)   
+    userBlog.textContent = setContentOrFallback(infoApi.blog)
     setDisable(userBlog, infoApi.blog)
     userCompany.textContent = setContentOrFallback(infoApi.company)
     setDisable(userCompany, infoApi.company)
