@@ -214,7 +214,7 @@ body {
 /* -- CARD -- */
 
 .card {
-    display: none;
+    display: grid;
     grid-template-areas: var(--card-grid-template);
     grid-gap: 30px;
     background-color: var(--card-background);
@@ -225,7 +225,7 @@ body {
 
 .loading,
 .not-found-screen {
-    display: none;
+    display: flex;
     background-color: var(--card-background);
     border-radius: 15px;
     box-sizing: border-box;

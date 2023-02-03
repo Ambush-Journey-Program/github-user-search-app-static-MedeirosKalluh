@@ -8,19 +8,23 @@ function changeMode() {
 
 // Set API
 
-const cardEl = document.querySelector(".card")
 const initialState = document.querySelector(".card__initial")
-const loadingEl = document.getElementById("loading")
-const notFoundScreenEl = document.getElementById("not-found")
 const searchEl = document.querySelector(".search")
 const searchInput = document.querySelector(".search__bar")
 const API_GIT  = `https://api.github.com`
+
+async function getUser(username) {
+    const response = await fetch(`${API_GIT}/users/${username}`);
+    const apiStatus = response.status
+    const info = await response.json();
+    return {...info, status:apiStatus}
+}
 
 searchEl.addEventListener('submit', async function(event){
     event.preventDefault();
     setLoadingScreen();
     const infoApi = await getUser(searchInput.value)
-    writeHtmlCardInfo(infoApi)
+    buildCardHTML(infoApi)
     setResult(infoApi.status)
 })
 
@@ -31,77 +35,115 @@ function setResult (statusCode){
         return  setCardScreen();
     }
 }
-
-async function getUser(username) {
-    const response = await fetch(`${API_GIT}/users/${username}`);
-    const apiStatus = response.status
-    const info = await response.json();
-    return {...info, status:apiStatus}
-}
-
-
+//  SET FUNCTIONS
+const contentContainer = document.querySelector(".content")
 function setLoadingScreen() {
-    initialState.style.display = "none";
-    cardEl.style.display = "none"
-    notFoundScreenEl.style.display = "none"
-    loadingEl.style.display = "flex";
+    return buildLoadingHtml()
 }
 
 function setCardScreen(){
-    loadingEl.style.display = "none";
-    cardEl.style.display = "grid";
-    notFoundScreenEl.style.display = "none";
+    return buildCardHTML()
 }
 
 function setUserNotFound(){
-    cardEl.style.display = "none"
-    loadingEl.style.display = "none";
-    notFoundScreenEl.style.display = "flex";
+    return buildNotFoundHtml()
 }
 
-const userAvatar = document.getElementById("user-avatar")
-const userName = document.getElementById("user-name")
-const githubProfileLink = document.getElementById("profile-link")
-const githubJoinDate = document.getElementById("join-date")
-const userBio = document.getElementById("user-bio")
-const userRepos = document.getElementById("user-repos")
-const userFollowers = document.getElementById("user-followers")
-const userFollowing = document.getElementById("user-following")
-const userLocation = document.getElementById("user-location")
-const userTwitter = document.getElementById("user-twitter")
-const userBlog = document.getElementById("user-blog")
-const userCompany = document.getElementById("user-company")
+// BUILD FUNCTIONS
+function buildLoadingHtml() {
+    contentContainer.innerHTML = `<div class="loading" id="loading">Loading</div>`
+}
+
+function buildNotFoundHtml() {
+    contentContainer.innerHTML = `
+        <div class="not-found-screen" id="not-found">
+            <img class="not-found__profile" src="images/notfound.svg" />
+            <p>User not found...</p>
+        </div>`
+}
 
 function setContentOrFallback (apiValue, value = "Empty"){
     return apiValue ? apiValue : value;
 }
 
-function setDisable(element, value){
-    if(!value){
-        element.closest(".card__social").classList.add("card__text--not-enabled")
-    } else if (value){
-        element.closest(".card__social").classList.remove("card__text--not-enabled")
-    }
-}
-
-function writeHtmlCardInfo(infoApi){
-    userAvatar.src = setContentOrFallback(infoApi.avatar_url, 'images/Oval.png');
-    userName.textContent = setContentOrFallback(infoApi.name)
-    githubProfileLink.textContent =   setContentOrFallback(infoApi.login)
-    githubProfileLink.href =  setContentOrFallback(infoApi.html_url)
+function buildCardHTML(infoApi){
     const apiDate = new Date(infoApi.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'})
-    githubJoinDate.textContent =  setContentOrFallback(`Joined ${apiDate}`)
-    userBio.textContent =  setContentOrFallback(infoApi.bio, "BIO EMPTY")
-    userRepos.textContent =  setContentOrFallback(infoApi.public_repos, "0")
-    userFollowers.textContent =  setContentOrFallback(infoApi.followers, "0")
-    userFollowing.textContent = setContentOrFallback(infoApi.following, "0")
-    userLocation.textContent = setContentOrFallback(infoApi.location)
-    setDisable(userLocation, infoApi.location)
-    userTwitter.textContent = setContentOrFallback(infoApi.twitter_username)
-    setDisable(userTwitter, infoApi.twitter_username)
-    userBlog.href = setContentOrFallback(infoApi.blog)
-    userBlog.textContent = setContentOrFallback(infoApi.blog)
-    setDisable(userBlog, infoApi.blog)
-    userCompany.textContent = setContentOrFallback(infoApi.company)
-    setDisable(userCompany, infoApi.company)
+    function setDisable(value){ if(!value){return "card__text--not-enabled"}}
+    contentContainer.innerHTML =  `
+        <div class="card">
+            <img
+            class="card__profile"
+            id="user-avatar"
+            src="${setContentOrFallback(infoApi.avatar_url, 'images/Oval.png')}"
+            alt="User profile picture"
+            />
+            <div class="card__header">
+            <div class="card__title">
+                <h1 class="card__name" id="user-name">${setContentOrFallback(infoApi.name)}</h1>
+                <a
+                class="card__link"
+                id="profile-link"
+                href="${setContentOrFallback(infoApi.html_url)}"
+                >${setContentOrFallback(infoApi.login)}
+                </a>
+            </div>
+            <p class="card__date" id="join-date">${setContentOrFallback(`Joined ${apiDate}`)}</p>
+            </div>
+
+            <p class="card__bio card__text" id="user-bio">
+            ${setContentOrFallback(infoApi.bio, "BIO EMPTY")}
+            </p>
+
+            <div class="card__info">
+            <div class="card__activities">
+                <p class="card__text">Repos</p>
+                <h2 class="card__numbers" id="user-repos">${setContentOrFallback(infoApi.public_repos, "0")}</h2>
+            </div>
+            <div class="card__activities">
+                <p class="card__text">Followers</p>
+                <h2 class="card__numbers" id="user-followers">${setContentOrFallback(infoApi.followers, "0")}</h2>
+            </div>
+            <div class="card__activities">
+                <p class="card__text">Following</p>
+                <h2 class="card__numbers" id="user-following">${setContentOrFallback(infoApi.following, "0")}</h2>
+            </div>
+            </div>
+
+            <div class="card__finder">
+            <div class="card__social ${setDisable(infoApi.location)}">
+                <img
+                class="card__logo"
+                src="images/loc.svg"
+                alt="GPS Location Icon"
+                />
+                <p class="card__text" id="user-location">${setContentOrFallback(infoApi.location)}</p>
+            </div>
+            <div class="card__social ${setDisable(infoApi.twitter_username)}">
+                <img
+                class="card__logo"
+                src="images/004-twitter.svg"
+                alt="Twitter Bird Icon"
+                />
+                <p class="card__text" id="user-twitter">${setContentOrFallback(infoApi.twitter_username)}</p>
+            </div>
+            <div class="card__social card__adress ${setDisable(infoApi.blog)}">
+                <img
+                class="card__logo"
+                src="images/002-url.svg"
+                alt="Chain Link Icon"
+                />
+                <a class="card__text" id="user-blog" href="${setContentOrFallback(infoApi.blog)}">
+                ${setContentOrFallback(infoApi.blog)}</a
+                >
+            </div>
+            <div class="card__social ${setDisable(infoApi.company)}">
+                <img
+                class="card__logo"
+                src="images/001-office-building.svg"
+                alt="Office building Icon"
+                />
+                <p class="card__text" id="user-company">${setContentOrFallback(infoApi.company)}</p>
+            </div>
+            </div>
+        </div>`
 }
