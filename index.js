@@ -1,3 +1,5 @@
+const NOT_FOUND = 404
+
 //Dark mode
 function changeMode() {
     const element = document.body;
@@ -8,7 +10,8 @@ function changeMode() {
 
 const cardEl = document.querySelector(".card")
 const initialState = document.querySelector(".card__initial")
-const loading = document.querySelector(".loading")
+const loadingEl = document.getElementById("loading")
+const notFoundScreenEl = document.getElementById("not-found")
 const searchEl = document.querySelector(".search")
 const searchInput = document.querySelector(".search__bar")
 const API_GIT  = `https://api.github.com`
@@ -18,25 +21,42 @@ searchEl.addEventListener('submit', async function(event){
     setLoadingScreen();
     const infoApi = await getUser(searchInput.value)
     writeHtmlCardInfo(infoApi)
-    setCardScreen()
+    setResult(infoApi.status)
 })
+
+function setResult (statusCode){
+    if(statusCode === NOT_FOUND){
+        return setUserNotFound();
+    } else {
+        return  setCardScreen();
+    }        
+}
 
 async function getUser(username) {
     const response = await fetch(`${API_GIT}/users/${username}`);
+    const apiStatus = response.status
     const info = await response.json();
-    return info
+    return {...info, status:apiStatus}
 }
 
 
 function setLoadingScreen() {
     initialState.style.display = "none";
     cardEl.style.display = "none"
-    loading.style.display = "flex";
+    notFoundScreenEl.style.display = "none"
+    loadingEl.style.display = "flex";
 }
 
 function setCardScreen(){
-    loading.style.display = "none";
+    loadingEl.style.display = "none";
     cardEl.style.display = "grid";
+    notFoundScreenEl.style.display = "none";
+}
+
+function setUserNotFound(){
+    cardEl.style.display = "none"
+    loadingEl.style.display = "none";
+    notFoundScreenEl.style.display = "flex";
 }
 
 const userAvatar = document.getElementById("user-avatar")
@@ -59,7 +79,9 @@ function setContentOrFallback (apiValue, value = "Empty"){
 function setDisable(element, value){
     if(!value){
         element.closest(".card__social").classList.add("card__text--not-enabled")
-    }
+    } else if (value){
+        element.closest(".card__social").classList.remove("card__text--not-enabled")
+    } 
 }
 
 function writeHtmlCardInfo(infoApi){
