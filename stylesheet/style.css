@@ -31,6 +31,7 @@ body {
     --date-color:  #697C9A;
     --info-background: #F6F8FF;
     --border-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    --not-found-filter: none;
 }
 
 @media (max-width: 730px) {
@@ -74,6 +75,7 @@ body {
     --title-color: #FFFFFF;
     --date-color:  #FFFFFF;
     --border-shadow: 0;
+    --not-found-filter:invert(100%) sepia(1%) saturate(0%) hue-rotate(166deg) brightness(105%) contrast(102%);
 }
 
 /* _____ */
@@ -251,12 +253,18 @@ body {
     align-items: center;
 }
 
+.not-found__profile {
+    filter: var(--not-found-filter);
+}
+
+.not-found__profile,
 .card__profile {
     grid-area: card__profile;
     max-width: 6.25rem;
     min-width: 4rem;
     align-self: center;
     border-radius: 100%;
+    
 }
 
 .card__header {

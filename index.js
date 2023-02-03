@@ -1,4 +1,4 @@
-const errorPgNtFound = 404
+const NOT_FOUND = 404
 
 //Dark mode
 function changeMode() {
@@ -24,8 +24,8 @@ searchEl.addEventListener('submit', async function(event){
     setResult(infoApi.status)
 })
 
-function setResult (apiResult){
-    if(apiResult === errorPgNtFound){
+function setResult (statusCode){
+    if(statusCode === NOT_FOUND){
         return setUserNotFound();
     } else {
         return  setCardScreen();
