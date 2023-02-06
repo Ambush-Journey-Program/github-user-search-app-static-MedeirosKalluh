@@ -1,7 +1,7 @@
 body {
     font-family: 'Space Mono', 'calibri', 'arial', sans-serif;
     font-weight: 400;
-    background: var(--body-background);  
+    background: var(--body-background);
     color: var(--text-color);
     transition: .4s;
 }
@@ -11,18 +11,18 @@ body {
     --container-margin: 50px auto 0;
     --cotainner-padding: 0;
     --search-icon-margin: 22px;
-    --card-grid-template:    
+    --card-grid-template:
         "card__profile  card__header card__header"
         "card__profile  card__bio     card__bio"
         " .             card__info    card__info"
         " .             card__finder  card__finder";
-    --card-padding: 48px; 
+    --card-padding: 48px;
     --card-header-direction: row;
     --card-date-side: right;
     --card-info-height: 0;
     --card-activities-position: left;
-    --social-width: 50%;   
-    --card-finder-direction: row;  
+    --social-width: 50%;
+    --card-finder-direction: row;
     /* dark mode variables */
     --body-background: #F6F8FF;
     --card-background: #FFFFFF;
@@ -39,7 +39,7 @@ body {
         --container-width: 730px;
         --container-margin: 50px auto 0;
         --cotainner-padding:50px;
-        --card-grid-template:             
+        --card-grid-template:
             "card__profile  card__header card__header"
             "card__profile  .            .           "
             "card__bio      card__bio    card__bio   "
@@ -47,7 +47,7 @@ body {
             "card__finder   card__finder card__finder";
         --card-header-direction: column;
         --card-date-side: left;
-        --social-width: 50%;   
+        --social-width: 50%;
     }
 }
 
@@ -91,7 +91,7 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     width: 100%;
     font-weight: 700;
     margin-bottom: 14px;
@@ -195,7 +195,7 @@ body {
     color: var(--date-color);
 }
 
-.search__button { 
+.search__button {
     align-self: center;
     height: 50px;
     padding: 0 24px;
@@ -214,7 +214,7 @@ body {
 /* -- CARD -- */
 
 .card {
-    display: none;
+    display: grid;
     grid-template-areas: var(--card-grid-template);
     grid-gap: 30px;
     background-color: var(--card-background);
@@ -225,7 +225,7 @@ body {
 
 .loading,
 .not-found-screen {
-    display: none;
+    display: flex;
     background-color: var(--card-background);
     border-radius: 15px;
     box-sizing: border-box;
@@ -264,7 +264,7 @@ body {
     min-width: 4rem;
     align-self: center;
     border-radius: 100%;
-    
+
 }
 
 .card__header {
@@ -296,7 +296,7 @@ body {
     grid-area: card__date;
     margin-top: 4px;
     font-size: 15px;
-    text-align: var(--card-date-side); 
+    text-align: var(--card-date-side);
     color: var(--date-color);
 }
 
@@ -327,7 +327,7 @@ body {
     line-height: var(--card-info-height);
     border-radius: 10px;
     background-color: var(--info-background);
-    color: var(--text-color);   
+    color: var(--text-color);
 }
 
 .card__activities {
@@ -344,16 +344,16 @@ body {
 }
 
 .card__finder {
-    grid-area: card__finder; 
+    grid-area: card__finder;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--card-background);
     flex-direction: var(--card-finder-direction);
     width: var(--card-finder-width);
 }
-    
+
 .card__social {
-    width: var(--social-width); 
+    width: var(--social-width);
     padding: 10px;
     display: flex;
     gap: 20px;
