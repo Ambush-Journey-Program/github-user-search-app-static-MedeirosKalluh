@@ -24,38 +24,40 @@ searchEl.addEventListener('submit', async function(event){
     event.preventDefault();
     setLoadingScreen();
     const infoApi = await getUser(searchInput.value)
-    buildCardHTML(infoApi)
-    setResult(infoApi.status)
+    setResult(infoApi)
 })
 
-function setResult (statusCode){
-    if(statusCode === NOT_FOUND){
-        return setUserNotFound();
+function setResult (infoApi){
+    if(infoApi.status === NOT_FOUND){
+        setUserNotFound();
     } else {
-        return  setCardScreen();
+        setCardScreen(infoApi)
     }
 }
 //  SET FUNCTIONS
 const contentContainer = document.querySelector(".content")
 function setLoadingScreen() {
-    return buildLoadingHtml()
+    const loadingHtml = buildLoadingHtml()
+    contentContainer.innerHTML =  loadingHtml
 }
 
-function setCardScreen(){
-    return buildCardHTML()
+function setCardScreen(infoApi){
+    const cardHtml = buildCardHTML(infoApi)
+    contentContainer.innerHTML =  cardHtml
 }
 
 function setUserNotFound(){
-    return buildNotFoundHtml()
+    const notFoundHtml = buildNotFoundHtml()
+    contentContainer.innerHTML = notFoundHtml
 }
 
 // BUILD FUNCTIONS
 function buildLoadingHtml() {
-    contentContainer.innerHTML = `<div class="loading" id="loading">Loading</div>`
+  return `<div class="loading" id="loading">Loading</div>`
 }
 
 function buildNotFoundHtml() {
-    contentContainer.innerHTML = `
+    return `
         <div class="not-found-screen" id="not-found">
             <img class="not-found__profile" src="images/notfound.svg" />
             <p>User not found...</p>
@@ -66,10 +68,11 @@ function setContentOrFallback (apiValue, value = "Empty"){
     return apiValue ? apiValue : value;
 }
 
+function setDisable(value){ if(!value){return "card__text--not-enabled"}}
+
 function buildCardHTML(infoApi){
     const apiDate = new Date(infoApi.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'})
-    function setDisable(value){ if(!value){return "card__text--not-enabled"}}
-    contentContainer.innerHTML =  `
+    return `
         <div class="card">
             <img
             class="card__profile"
